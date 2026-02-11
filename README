@@ -1,0 +1,283 @@
+# DataForge
+
+DataForge es una aplicación de escritorio que integra un **backend en Spring Boot** y un **frontend en Flutter**, distribuida como **AppImage** para facilitar su instalación en Linux.
+
+---
+
+# 🚀 Instalación (AppImage) — IMPORTANTE
+
+La aplicación se distribuye como un único archivo:
+
+```
+DataForge-x86_64.AppImage
+```
+
+## 1️⃣ Descargar el archivo
+
+Descarga la última versión desde la sección **Releases** del repositorio.
+
+## 2️⃣ Dar permisos de ejecución
+
+Abre una terminal en la carpeta donde descargaste el archivo y ejecuta:
+
+```bash
+chmod +x DataForge-x86_64.AppImage
+```
+
+## 3️⃣ Ejecutar la aplicación
+
+Puedes ejecutarla de dos maneras:
+
+### Opción A: Doble clic
+
+Simplemente haz doble clic sobre el archivo.
+
+### Opción B: Desde terminal
+
+```bash
+./DataForge-x86_64.AppImage
+```
+
+---
+
+# 📂 ¿Dónde se guardan los datos?
+
+DataForge crea automáticamente la carpeta:
+
+```
+~/.local/share/DataForge
+```
+
+Ahí se almacenan:
+
+* Base de datos (H2)
+* Logs del backend
+* Archivos internos de configuración
+
+No necesitas configurar nada manualmente.
+
+---
+
+# 🧠 ¿Cómo funciona internamente?
+
+La AppImage incluye:
+
+* Runtime de Java embebido
+* Backend Spring Boot
+* Frontend Flutter (Linux)
+
+Al ejecutarse:
+
+1. Se inicia el backend automáticamente.
+2. Se crea la base de datos si no existe.
+3. El frontend se conecta al backend internamente.
+
+Todo ocurre de manera automática para el usuario.
+
+---
+# 🖥 Uso de la Aplicación
+## 🚀 Inicio
+
+Al ejecutar la AppImage, DataForge realiza automáticamente lo siguiente:
+
+Inicia el backend (Spring Boot).
+
+Crea la base de datos local si no existe.
+
+Detecta un puerto dinámico disponible.
+
+Inicia la interfaz gráfica desarrollada en Flutter.
+
+Conecta el frontend con el backend internamente.
+
+⚠️ El usuario no necesita configurar nada manualmente.
+
+---
+
+# 📊 Funcionalidades Principales
+### 🔹 Gestión de Datos
+
+- Crear registros
+
+- Editar información
+
+- Eliminar datos
+
+- Consultar estructuras almacenadas
+
+###🔹 Persistencia Automática
+
+Los datos se almacenan automáticamente en:
+
+```
+~/.local/share/DataForge
+```
+
+Esto incluye:
+
+- Base de datos H2
+
+- Logs del sistema
+
+- Archivos internos de configuración
+
+Los datos permanecen guardados aunque cierres la aplicación.
+
+### 🔹 Ejecución Local y Segura
+
+-No requiere conexión a internet.
+
+- No expone puertos públicos.
+
+- El backend corre de forma interna.
+
+- Utiliza puerto dinámico.
+
+- Base de datos embebida.
+
+### 🔹 Logs del Sistema
+
+Los logs del backend se guardan en:
+
+~/.local/share/DataForge/logs
+
+
+En caso de error, puedes revisar ese archivo para depuración.
+
+# 🛠 Desarrollo
+### 🔹 Backend
+
+Tecnologías utilizadas:
+
+- Java 21
+
+- Spring Boot 3
+
+- Spring Data JPA
+
+- H2 Database (modo archivo)
+
+- Puerto dinámico (server.port=0)
+
+El backend:
+
+- Se empaqueta como JAR ejecutable.
+
+- Se ejecuta con una JRE embebida.
+
+- Publica automáticamente el puerto asignado.
+
+- Se cierra cuando el usuario cierra la app.
+
+### 🔹 Frontend
+
+Desarrollado con:
+
+- Flutter (Linux Desktop)
+
+- Comunicación HTTP con la API REST
+
+- Lectura de variable de entorno API_PORT
+
+---
+
+# 📦 Empaquetado
+
+DataForge se distribuye como:
+
+- ✅ AppImage
+
+- ✅ Runtime JRE embebido
+
+- ✅ Backend JAR
+
+- ✅ Frontend Flutter completo
+
+El archivo AppRun se encarga de:
+
+- Crear carpeta de datos del usuario.
+
+- Iniciar backend.
+
+- Esperar el puerto dinámico.
+
+- Exportar variable API_PORT.
+
+- Ejecutar frontend.
+
+- Finalizar backend al cerrar la app.
+
+---
+
+# 📂 Estructura del Proyecto
+
+```
+DataForge/
+├── backend/              # Proyecto Spring Boot
+├── frontend/             # Proyecto Flutter
+├── packaging/            # AppRun, .desktop, iconos
+├── builder_appimage/     # Script de construcción
+├── docs/                 # Documentación adicional
+└── README.md
+```
+
+## 🔄 Construcción Manual (Opcional)
+### 1️⃣ Compilar Backend
+cd backend
+./mvnw clean package
+
+
+El JAR se genera en:
+
+```
+backend/target/
+```
+
+### 2️⃣ Compilar Frontend
+
+```
+cd frontend
+flutter build linux --release
+```
+
+El ejecutable se genera en:
+
+```
+frontend/build/linux/x64/release/bundle/
+```
+
+### 3️⃣ Generar AppImage
+
+Desde la raíz del proyecto:
+
+```
+./packaging/build_appimage.sh
+```
+
+Este script:
+
+- Compila backend
+
+- Compila frontend
+
+- Copia la JRE
+
+- Construye la estructura AppDir
+
+- Genera DataForge-x86_64.AppImage
+
+---
+
+# 📄 Licencia
+
+Este proyecto está distribuido bajo la licencia MIT License.
+
+Consulta el archivo LICENSE para más detalles.
+
+# 👨‍💻 Autor
+
+Jorge Francisco Acosta Alcalá
+
+---
+
+Si encuentras algún problema, abre un issue en el repositorio.
