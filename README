@@ -1,283 +1,525 @@
-# DataForge
+<div align="center">
 
-DataForge es una aplicación de escritorio que integra un **backend en Spring Boot** y un **frontend en Flutter**, distribuida como **AppImage** para facilitar su instalación en Linux.
+# 🔥 DataForge
+
+### *Forja tus bases de datos locales con el poder de Docker*
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-orange.svg)](LICENSE)
+[![Java](https://img.shields.io/badge/Java-21-orange.svg)](https://www.oracle.com/java/)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3-blue.svg)](https://spring.io/projects/spring-boot)
+[![Flutter](https://img.shields.io/badge/Flutter-Linux-blue.svg)](https://flutter.dev)
+[![Docker](https://img.shields.io/badge/Docker-Ready-blue.svg)](https://www.docker.com/)
+
+<img src="assets/logo.png" alt="DataForge Logo" width="200"/>
+
+*Un administrador de bases de datos local poderoso, seguro y fácil de usar*
+
+[📥 Descargar](#-instalación) • [📚 Documentación](#-funcionalidades-principales) • [🛠️ Desarrollo](#-desarrollo) • [🐛 Reportar Issue](https://github.com/tu-usuario/dataforge/issues)
 
 ---
 
-# 🚀 Instalación (AppImage) — IMPORTANTE
+</div>
 
-La aplicación se distribuye como un único archivo:
+## 🔥 ¿Qué es DataForge?
+
+**DataForge** es una aplicación de escritorio que combina la potencia de **Docker** con una interfaz intuitiva para gestionar bases de datos locales. Forja, moldea y gestiona tus contenedores de bases de datos con la precisión de un maestro herrero.
+
+### ✨ Características Destacadas
+
+<table>
+<tr>
+<td width="50%">
+
+🐳 **Gestión Docker Integrada**
+- Crea contenedores de bases de datos al instante
+- Soporte para MySQL, PostgreSQL, MongoDB y más
+- Control total desde una interfaz gráfica
+
+</td>
+<td width="50%">
+
+🔒 **Seguro y Local**
+- Todo corre en tu máquina
+- Sin exposición a internet
+- Datos persistentes y seguros
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+⚡ **Rendimiento Optimizado**
+- Backend Spring Boot eficiente
+- Puerto dinámico automático
+- Base de datos H2 embebida
+
+</td>
+<td width="50%">
+
+🎨 **Interfaz Moderna**
+- Desarrollada en Flutter
+- Diseño intuitivo y responsivo
+- Tema de forja con colores azul y naranja
+
+</td>
+</tr>
+</table>
+
+---
+
+## 📥 Instalación
+
+DataForge se distribuye como un **AppImage** autocontenido. No requiere instalación compleja ni dependencias adicionales.
+
+### 🔧 Requisitos Previos
+
+- ✅ Linux (x86_64)
+- ✅ Docker instalado y en ejecución
+- ✅ Permisos para ejecutar Docker (usuario en grupo `docker`)
+
+### 📦 Descarga e Instalación
+
+#### 1️⃣ **Descargar el AppImage**
+
+Descarga la última versión desde [Releases](https://github.com/tu-usuario/dataforge/releases):
 
 ```
 DataForge-x86_64.AppImage
 ```
 
-## 1️⃣ Descargar el archivo
-
-Descarga la última versión desde la sección **Releases** del repositorio.
-
-## 2️⃣ Dar permisos de ejecución
-
-Abre una terminal en la carpeta donde descargaste el archivo y ejecuta:
+#### 2️⃣ **Dar permisos de ejecución**
 
 ```bash
 chmod +x DataForge-x86_64.AppImage
 ```
 
-## 3️⃣ Ejecutar la aplicación
+#### 3️⃣ **Ejecutar DataForge**
 
-Puedes ejecutarla de dos maneras:
+**Opción A:** Doble clic sobre el archivo
 
-### Opción A: Doble clic
-
-Simplemente haz doble clic sobre el archivo.
-
-### Opción B: Desde terminal
+**Opción B:** Desde terminal
 
 ```bash
 ./DataForge-x86_64.AppImage
 ```
 
+> 💡 **Tip:** Puedes mover el AppImage a `~/.local/bin/` o `/usr/local/bin/` para ejecutarlo desde cualquier lugar.
+
 ---
 
-# 📂 ¿Dónde se guardan los datos?
+## 🗂️ Ubicación de Datos
 
-DataForge crea automáticamente la carpeta:
+DataForge crea automáticamente su estructura de datos en:
 
 ```
-~/.local/share/DataForge
+~/.local/share/DataForge/
+├── database/          # Base de datos H2 (metadatos)
+├── logs/              # Logs del sistema
+├── docker-configs/    # Configuraciones de contenedores
+└── backups/           # Respaldos automáticos
 ```
 
-Ahí se almacenan:
-
-* Base de datos (H2)
-* Logs del backend
-* Archivos internos de configuración
-
-No necesitas configurar nada manualmente.
+**🔒 Tus datos permanecen seguros** incluso después de cerrar la aplicación.
 
 ---
 
-# 🧠 ¿Cómo funciona internamente?
+## 🎯 Funcionalidades Principales
 
-La AppImage incluye:
+### 🐳 Gestión de Contenedores Docker
 
-* Runtime de Java embebido
-* Backend Spring Boot
-* Frontend Flutter (Linux)
+<details>
+<summary><b>🔹 Crear Contenedores de Bases de Datos</b></summary>
 
-Al ejecutarse:
+<br>
 
-1. Se inicia el backend automáticamente.
-2. Se crea la base de datos si no existe.
-3. El frontend se conecta al backend internamente.
+DataForge te permite crear contenedores Docker con un solo clic:
 
-Todo ocurre de manera automática para el usuario.
+- **MySQL** (5.7, 8.0)
+- **PostgreSQL** (12, 13, 14, 15, 16)
+- **MongoDB** (4, 5, 6, 7)
+- **Redis**
+- **MariaDB**
+- Y más...
 
----
-# 🖥 Uso de la Aplicación
-## 🚀 Inicio
+**Características:**
+- Configuración automática de puertos
+- Volúmenes persistentes
+- Variables de entorno personalizables
+- Redes Docker aisladas
 
-Al ejecutar la AppImage, DataForge realiza automáticamente lo siguiente:
+</details>
 
-Inicia el backend (Spring Boot).
+<details>
+<summary><b>🔹 Administrar Contenedores Existentes</b></summary>
 
-Crea la base de datos local si no existe.
+<br>
 
-Detecta un puerto dinámico disponible.
+- ▶️ Iniciar/Detener contenedores
+- 🔄 Reiniciar servicios
+- 🗑️ Eliminar contenedores
+- 📊 Monitorear estado y logs en tiempo real
+- 💾 Ver uso de recursos (CPU, RAM, almacenamiento)
 
-Inicia la interfaz gráfica desarrollada en Flutter.
+</details>
 
-Conecta el frontend con el backend internamente.
+<details>
+<summary><b>🔹 Conexiones de Base de Datos</b></summary>
 
-⚠️ El usuario no necesita configurar nada manualmente.
+<br>
 
----
+- 🔌 Prueba de conexiones integrada
+- 📋 Información de conexión copiable
+- 🔑 Gestión de credenciales
+- 🌐 Exportar configuraciones para herramientas externas
 
-# 📊 Funcionalidades Principales
-### 🔹 Gestión de Datos
+</details>
 
-- Crear registros
-
-- Editar información
-
-- Eliminar datos
-
-- Consultar estructuras almacenadas
-
-###🔹 Persistencia Automática
-
-Los datos se almacenan automáticamente en:
+### 📊 Panel de Control
 
 ```
-~/.local/share/DataForge
+┌─────────────────────────────────────────────────────┐
+│  🔥 DataForge - Panel de Control                   │
+├─────────────────────────────────────────────────────┤
+│                                                     │
+│  📦 Contenedores Activos: 3                        │
+│  💾 Bases de Datos: 5                              │
+│  🔧 Docker Status: ✅ Running                       │
+│                                                     │
+│  ┌─────────────┬──────────┬─────────┬──────────┐  │
+│  │   Nombre    │   Tipo   │ Estado  │ Puerto   │  │
+│  ├─────────────┼──────────┼─────────┼──────────┤  │
+│  │  dev-mysql  │  MySQL   │ Running │  3306    │  │
+│  │  prod-pg    │ Postgres │ Running │  5432    │  │
+│  │  cache-rds  │  Redis   │ Running │  6379    │  │
+│  └─────────────┴──────────┴─────────┴──────────┘  │
+│                                                     │
+└─────────────────────────────────────────────────────┘
 ```
 
-Esto incluye:
+### 🔒 Seguridad y Privacidad
 
-- Base de datos H2
+- ✅ **Ejecución 100% local** - No requiere internet
+- ✅ **Sin telemetría** - Tus datos son solo tuyos
+- ✅ **Puerto dinámico** - Evita conflictos automáticamente
+- ✅ **Contenedores aislados** - Redes Docker separadas
+- ✅ **Credenciales seguras** - Almacenamiento encriptado
 
-- Logs del sistema
+### 📝 Logs y Diagnóstico
 
-- Archivos internos de configuración
+Los logs del sistema se guardan en:
 
-Los datos permanecen guardados aunque cierres la aplicación.
+```
+~/.local/share/DataForge/logs/
+├── backend.log         # Logs del backend Spring Boot
+├── docker.log          # Interacciones con Docker
+└── application.log     # Log general de la aplicación
+```
 
-### 🔹 Ejecución Local y Segura
-
--No requiere conexión a internet.
-
-- No expone puertos públicos.
-
-- El backend corre de forma interna.
-
-- Utiliza puerto dinámico.
-
-- Base de datos embebida.
-
-### 🔹 Logs del Sistema
-
-Los logs del backend se guardan en:
-
-~/.local/share/DataForge/logs
-
-
-En caso de error, puedes revisar ese archivo para depuración.
-
-# 🛠 Desarrollo
-### 🔹 Backend
-
-Tecnologías utilizadas:
-
-- Java 21
-
-- Spring Boot 3
-
-- Spring Data JPA
-
-- H2 Database (modo archivo)
-
-- Puerto dinámico (server.port=0)
-
-El backend:
-
-- Se empaqueta como JAR ejecutable.
-
-- Se ejecuta con una JRE embebida.
-
-- Publica automáticamente el puerto asignado.
-
-- Se cierra cuando el usuario cierra la app.
-
-### 🔹 Frontend
-
-Desarrollado con:
-
-- Flutter (Linux Desktop)
-
-- Comunicación HTTP con la API REST
-
-- Lectura de variable de entorno API_PORT
+En caso de errores, estos archivos te ayudarán a diagnosticar problemas.
 
 ---
 
-# 📦 Empaquetado
+## 🏗️ Arquitectura
 
-DataForge se distribuye como:
+```
+┌─────────────────────────────────────────────────────────┐
+│                    DataForge AppImage                    │
+├─────────────────────────────────────────────────────────┤
+│                                                          │
+│  ┌────────────────────┐         ┌──────────────────┐   │
+│  │  Frontend (Flutter) │ ◄─────► │ Backend (Spring) │   │
+│  │                     │  REST   │                  │   │
+│  │  - UI/UX           │  API    │  - Lógica        │   │
+│  │  - Controles       │         │  - Docker SDK    │   │
+│  │  - Monitoreo       │         │  - Base de Datos │   │
+│  └────────────────────┘         └──────────────────┘   │
+│           ▲                              │              │
+│           │                              ▼              │
+│           │                     ┌─────────────────┐    │
+│           │                     │   H2 Database   │    │
+│           │                     │   (Metadatos)   │    │
+│           │                     └─────────────────┘    │
+│           │                              │              │
+│           │                              ▼              │
+│           │                     ┌─────────────────┐    │
+│           └─────────────────────┤  Docker Engine  │    │
+│                                 │                 │    │
+│                                 │  🐳 Contenedores│    │
+│                                 └─────────────────┘    │
+│                                                          │
+└─────────────────────────────────────────────────────────┘
+```
 
-- ✅ AppImage
+### 🔄 Flujo de Inicio
 
-- ✅ Runtime JRE embebido
-
-- ✅ Backend JAR
-
-- ✅ Frontend Flutter completo
-
-El archivo AppRun se encarga de:
-
-- Crear carpeta de datos del usuario.
-
-- Iniciar backend.
-
-- Esperar el puerto dinámico.
-
-- Exportar variable API_PORT.
-
-- Ejecutar frontend.
-
-- Finalizar backend al cerrar la app.
+1. 🚀 **AppImage ejecutado** por el usuario
+2. 🔧 **AppRun script** crea estructura de datos
+3. ☕ **Backend Spring Boot** inicia con JRE embebida
+4. 🔌 **Puerto dinámico** detectado y exportado
+5. 💾 **Base de datos H2** creada/conectada
+6. 🐳 **Docker daemon** verificado
+7. 🎨 **Frontend Flutter** lanzado con API_PORT
+8. ✅ **Aplicación lista** para usar
 
 ---
 
-# 📂 Estructura del Proyecto
+## 🛠️ Desarrollo
+
+### 🔧 Stack Tecnológico
+
+#### Backend
+- **Java 21** - Lenguaje principal
+- **Spring Boot 3** - Framework
+- **Spring Data JPA** - Persistencia
+- **H2 Database** - Base de datos embebida
+- **Docker Java SDK** - Integración con Docker
+- **Lombok** - Reducción de boilerplate
+
+#### Frontend
+- **Flutter** - Framework UI
+- **Linux Desktop** - Target platform
+- **HTTP** - Comunicación con API REST
+- **Provider** - Gestión de estado
+
+### 📂 Estructura del Proyecto
 
 ```
 DataForge/
-├── backend/              # Proyecto Spring Boot
-├── frontend/             # Proyecto Flutter
-├── packaging/            # AppRun, .desktop, iconos
-├── builder_appimage/     # Script de construcción
-├── docs/                 # Documentación adicional
-└── README.md
+├── backend/                    # Spring Boot application
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/
+│   │   │   │   └── com/dataforge/
+│   │   │   │       ├── controller/
+│   │   │   │       ├── service/
+│   │   │   │       ├── repository/
+│   │   │   │       ├── model/
+│   │   │   │       └── config/
+│   │   │   └── resources/
+│   │   │       └── application.properties
+│   │   └── test/
+│   ├── pom.xml
+│   └── mvnw
+│
+├── frontend/                   # Flutter application
+│   ├── lib/
+│   │   ├── screens/
+│   │   ├── widgets/
+│   │   ├── services/
+│   │   ├── models/
+│   │   └── main.dart
+│   ├── pubspec.yaml
+│   └── build/
+│
+├── packaging/                  # AppImage packaging
+│   ├── AppRun                 # Startup script
+│   ├── dataforge.desktop      # Desktop entry
+│   ├── icon.png               # Application icon
+│   └── build_appimage.sh      # Build script
+│
+├── docs/                       # Documentation
+│   ├── API.md
+│   ├── CONTRIBUTING.md
+│   └── ARCHITECTURE.md
+│
+├── assets/                     # Resources
+│   ├── logo.png
+│   └── screenshots/
+│
+├── README.md
+├── LICENSE
+└── .gitignore
 ```
 
-## 🔄 Construcción Manual (Opcional)
-### 1️⃣ Compilar Backend
+### 🔨 Compilación Manual
+
+#### 1️⃣ Compilar Backend
+
+```bash
 cd backend
-./mvnw clean package
-
-
-El JAR se genera en:
-
-```
-backend/target/
+./mvnw clean package -DskipTests
 ```
 
-### 2️⃣ Compilar Frontend
+El JAR se genera en: `backend/target/dataforge-backend.jar`
 
-```
+#### 2️⃣ Compilar Frontend
+
+```bash
 cd frontend
+flutter pub get
 flutter build linux --release
 ```
 
-El ejecutable se genera en:
+El bundle se genera en: `frontend/build/linux/x64/release/bundle/`
 
-```
-frontend/build/linux/x64/release/bundle/
-```
+#### 3️⃣ Generar AppImage
 
-### 3️⃣ Generar AppImage
-
-Desde la raíz del proyecto:
-
-```
-./packaging/build_appimage.sh
+```bash
+cd packaging
+./build_appimage.sh
 ```
 
 Este script:
+- ✅ Compila backend y frontend
+- ✅ Descarga JRE embebida (si no existe)
+- ✅ Crea estructura AppDir
+- ✅ Genera `DataForge-x86_64.AppImage`
 
-- Compila backend
+### 🧪 Tests
 
-- Compila frontend
+```bash
+# Backend tests
+cd backend
+./mvnw test
 
-- Copia la JRE
+# Frontend tests
+cd frontend
+flutter test
+```
 
-- Construye la estructura AppDir
+### 🐛 Debugging
 
-- Genera DataForge-x86_64.AppImage
+Para ejecutar en modo desarrollo:
+
+```bash
+# Backend (puerto 8080)
+cd backend
+./mvnw spring-boot:run
+
+# Frontend (en otra terminal)
+cd frontend
+export API_PORT=8080
+flutter run -d linux
+```
 
 ---
 
-# 📄 Licencia
+## 🤝 Contribuir
 
-Este proyecto está distribuido bajo la licencia MIT License.
+¡Las contribuciones son bienvenidas! Por favor lee [CONTRIBUTING.md](docs/CONTRIBUTING.md) para conocer el proceso.
 
-Consulta el archivo LICENSE para más detalles.
+### 🔥 Pasos para Contribuir
 
-# 👨‍💻 Autor
-
-Jorge Francisco Acosta Alcalá
+1. 🍴 Fork el proyecto
+2. 🌿 Crea una rama (`git checkout -b feature/AmazingFeature`)
+3. 💾 Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. 📤 Push a la rama (`git push origin feature/AmazingFeature`)
+5. 🎯 Abre un Pull Request
 
 ---
 
-Si encuentras algún problema, abre un issue en el repositorio.
+## 📊 Roadmap
+
+- [x] Gestión básica de contenedores Docker
+- [x] Interfaz gráfica con Flutter
+- [x] Distribución como AppImage
+- [ ] Soporte para Docker Compose
+- [ ] Respaldos automáticos programados
+- [ ] Importar/Exportar configuraciones
+- [ ] Gestión de volúmenes Docker
+- [ ] Soporte para Windows y macOS
+- [ ] Terminal integrada
+- [ ] Monitoreo de métricas en tiempo real
+
+---
+
+## 📸 Capturas de Pantalla
+
+<div align="center">
+
+### Panel Principal
+![Panel Principal](assets/screenshots/dashboard.png)
+
+### Gestión de Contenedores
+![Contenedores](assets/screenshots/containers.png)
+
+### Configuración
+![Configuración](assets/screenshots/settings.png)
+
+</div>
+
+---
+
+## 📄 Licencia
+
+Este proyecto está licenciado bajo la **MIT License** - consulta el archivo [LICENSE](LICENSE) para más detalles.
+
+```
+MIT License
+
+Copyright (c) 2024 Jorge Francisco Acosta Alcalá
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software")...
+```
+
+---
+
+## 👨‍💻 Autor
+
+<div align="center">
+
+**Jorge Francisco Acosta Alcalá**
+
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/tu-usuario)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/tu-usuario)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:tu-email@ejemplo.com)
+
+</div>
+
+---
+
+## 🙏 Agradecimientos
+
+- Spring Boot Team por el increíble framework
+- Flutter Team por hacer posible apps de escritorio multiplataforma
+- Docker por revolucionar el desarrollo de software
+- La comunidad Open Source por su apoyo continuo
+
+---
+
+## ❓ FAQ
+
+<details>
+<summary><b>¿Necesito instalar Docker por separado?</b></summary>
+<br>
+Sí, DataForge requiere que Docker esté instalado y en ejecución en tu sistema. La aplicación se conecta al daemon de Docker para gestionar contenedores.
+</details>
+
+<details>
+<summary><b>¿Puedo usar DataForge sin conexión a internet?</b></summary>
+<br>
+Sí, DataForge funciona 100% offline. Solo necesitas internet si quieres descargar nuevas imágenes de Docker.
+</details>
+
+<details>
+<summary><b>¿Dónde se guardan las bases de datos?</b></summary>
+<br>
+Los contenedores Docker crean volúmenes persistentes gestionados por Docker. Los metadatos de DataForge se guardan en <code>~/.local/share/DataForge/</code>.
+</details>
+
+<details>
+<summary><b>¿Cómo actualizo DataForge?</b></summary>
+<br>
+Simplemente descarga el nuevo AppImage y reemplaza el anterior. Tus datos se mantienen en <code>~/.local/share/DataForge/</code>.
+</details>
+
+<details>
+<summary><b>¿Funciona en otras distribuciones de Linux?</b></summary>
+<br>
+Sí, el AppImage es compatible con la mayoría de distribuciones Linux modernas (Ubuntu, Fedora, Arch, Debian, etc.).
+</details>
+
+---
+
+<div align="center">
+
+### 🔥 Forja tus bases de datos con DataForge 🔥
+
+**Si este proyecto te resulta útil, considera darle una ⭐**
+
+---
+
+*Hecho con 🧡 y ☕ por Jorge Francisco Acosta Alcalá*
+
+</div>
