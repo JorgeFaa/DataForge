@@ -1,0 +1,38 @@
+#!/bin/bash
+set -e
+
+HERE="$(dirname "$(readlink -f "$0")")"
+
+# 📂 Carpeta de datos del usuario
+DATA_DIR="$HOME/.local/share/DataForge"
+LOG_DIR="$DATA_DIR/logs"
+
+mkdir -p "$LOG_DIR"
+export DATA_DIR
+
+LOG_FILE="$LOG_DIR/backend.log"
+
+# 🚀 Iniciar backend usando JRE embebida
+"$HERE/runtime/jre/bin/java" \
+  -Dspring.datasource.url="jdbc:h2:file:$DATA_DIR/dataforge_db" \
+  -jar "$HERE/backend/Dataforge.jar" \
+  > "$LOG_FILE" 2>&1 &
+
+API_PID=$!
+
+cleanup() {
+  kill $API_PID 2>/dev/null || true
+}
+trap cleanup EXIT
+
+# ⏳ Esperar backend
+while ! grep -q "APP_RUNNING_PORT=" "$LOG_FILE"; do
+  sleep 1
+done
+
+PORT=$(grep "APP_RUNNING_PORT=" "$LOG_FILE" | tail -1 | cut -d '=' -f2)
+
+export API_PORT=$PORT
+
+# 🖥 Iniciar frontend
+"$HERE/frontend/data_forge_studio"

@@ -1,0 +1,26 @@
+# ===== Flutter =====
+frontend/build/
+frontend/.dart_tool/
+frontend/.flutter-plugins
+frontend/.flutter-plugins-dependencies
+frontend/.packages
+frontend/.metadata
+
+# ===== Java / Maven =====
+backend/target/
+backend/*.log
+
+# ===== Logs =====
+*.log
+
+# ===== Linux build =====
+*.AppImage
+*.AppDir
+
+# ===== IDE =====
+.idea/
+.vscode/
+
+# ===== OS =====
+.DS_Store
+Thumbs.db

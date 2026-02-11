@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=DataForge
+Exec=AppRun
+Icon=dataforge
+Comment=DataForge Studio - Herramienta de análisis
+Categories=Development;
+Terminal=false
