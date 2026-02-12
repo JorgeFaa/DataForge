@@ -1,8 +1,6 @@
-<div align="center">
-
 # 🔥 DataForge
 
-### *Forja tus bases de datos locales con el poder de Docker*
+> *Forja tus bases de datos locales con el poder de Docker*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-orange.svg)](LICENSE)
 [![Java](https://img.shields.io/badge/Java-21-orange.svg)](https://www.oracle.com/java/)
@@ -10,15 +8,13 @@
 [![Flutter](https://img.shields.io/badge/Flutter-Linux-blue.svg)](https://flutter.dev)
 [![Docker](https://img.shields.io/badge/Docker-Ready-blue.svg)](https://www.docker.com/)
 
-<img src="assets/logo.png" alt="DataForge Logo" width="200"/>
+![DataForge Logo](assets/logo.png)
 
-*Un administrador de bases de datos local poderoso, seguro y fácil de usar*
+**Un administrador de bases de datos local poderoso, seguro y fácil de usar**
 
 [📥 Descargar](#-instalación) • [📚 Documentación](#-funcionalidades-principales) • [🛠️ Desarrollo](#-desarrollo) • [🐛 Reportar Issue](https://github.com/tu-usuario/dataforge/issues)
 
 ---
-
-</div>
 
 ## 🔥 ¿Qué es DataForge?
 
@@ -26,44 +22,25 @@
 
 ### ✨ Características Destacadas
 
-<table>
-<tr>
-<td width="50%">
-
-🐳 **Gestión Docker Integrada**
+**🐳 Gestión Docker Integrada**
 - Crea contenedores de bases de datos al instante
 - Soporte para MySQL, PostgreSQL, MongoDB y más
 - Control total desde una interfaz gráfica
 
-</td>
-<td width="50%">
-
-🔒 **Seguro y Local**
+**🔒 Seguro y Local**
 - Todo corre en tu máquina
 - Sin exposición a internet
 - Datos persistentes y seguros
 
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-⚡ **Rendimiento Optimizado**
+**⚡ Rendimiento Optimizado**
 - Backend Spring Boot eficiente
 - Puerto dinámico automático
 - Base de datos H2 embebida
 
-</td>
-<td width="50%">
-
-🎨 **Interfaz Moderna**
+**🎨 Interfaz Moderna**
 - Desarrollada en Flutter
 - Diseño intuitivo y responsivo
 - Tema de forja con colores azul y naranja
-
-</td>
-</tr>
-</table>
 
 ---
 
@@ -127,10 +104,7 @@ DataForge crea automáticamente su estructura de datos en:
 
 ### 🐳 Gestión de Contenedores Docker
 
-<details>
-<summary><b>🔹 Crear Contenedores de Bases de Datos</b></summary>
-
-<br>
+#### 🔹 Crear Contenedores de Bases de Datos
 
 DataForge te permite crear contenedores Docker con un solo clic:
 
@@ -147,12 +121,7 @@ DataForge te permite crear contenedores Docker con un solo clic:
 - Variables de entorno personalizables
 - Redes Docker aisladas
 
-</details>
-
-<details>
-<summary><b>🔹 Administrar Contenedores Existentes</b></summary>
-
-<br>
+#### 🔹 Administrar Contenedores Existentes
 
 - ▶️ Iniciar/Detener contenedores
 - 🔄 Reiniciar servicios
@@ -160,19 +129,12 @@ DataForge te permite crear contenedores Docker con un solo clic:
 - 📊 Monitorear estado y logs en tiempo real
 - 💾 Ver uso de recursos (CPU, RAM, almacenamiento)
 
-</details>
-
-<details>
-<summary><b>🔹 Conexiones de Base de Datos</b></summary>
-
-<br>
+#### 🔹 Conexiones de Base de Datos
 
 - 🔌 Prueba de conexiones integrada
 - 📋 Información de conexión copiable
 - 🔑 Gestión de credenciales
 - 🌐 Exportar configuraciones para herramientas externas
-
-</details>
 
 ### 📊 Panel de Control
 
@@ -425,8 +387,6 @@ flutter run -d linux
 
 ## 📸 Capturas de Pantalla
 
-<div align="center">
-
 ### Panel Principal
 ![Panel Principal](assets/screenshots/dashboard.png)
 
@@ -435,8 +395,6 @@ flutter run -d linux
 
 ### Configuración
 ![Configuración](assets/screenshots/settings.png)
-
-</div>
 
 ---
 
@@ -457,69 +415,42 @@ of this software and associated documentation files (the "Software")...
 
 ## 👨‍💻 Autor
 
-<div align="center">
-
 **Jorge Francisco Acosta Alcalá**
 
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/tu-usuario)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/tu-usuario)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:tu-email@ejemplo.com)
-
-</div>
-
----
-
-## 🙏 Agradecimientos
-
-- Spring Boot Team por el increíble framework
-- Flutter Team por hacer posible apps de escritorio multiplataforma
-- Docker por revolucionar el desarrollo de software
-- La comunidad Open Source por su apoyo continuo
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/JorgeFaa)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jorge-francisco-acosta-alcal%C3%A1-574986365/)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:jorgefranciscoacostaa@gmail.com)
 
 ---
 
 ## ❓ FAQ
 
-<details>
-<summary><b>¿Necesito instalar Docker por separado?</b></summary>
-<br>
+**¿Necesito instalar Docker por separado?**
+
 Sí, DataForge requiere que Docker esté instalado y en ejecución en tu sistema. La aplicación se conecta al daemon de Docker para gestionar contenedores.
-</details>
 
-<details>
-<summary><b>¿Puedo usar DataForge sin conexión a internet?</b></summary>
-<br>
+**¿Puedo usar DataForge sin conexión a internet?**
+
 Sí, DataForge funciona 100% offline. Solo necesitas internet si quieres descargar nuevas imágenes de Docker.
-</details>
 
-<details>
-<summary><b>¿Dónde se guardan las bases de datos?</b></summary>
-<br>
-Los contenedores Docker crean volúmenes persistentes gestionados por Docker. Los metadatos de DataForge se guardan en <code>~/.local/share/DataForge/</code>.
-</details>
+**¿Dónde se guardan las bases de datos?**
 
-<details>
-<summary><b>¿Cómo actualizo DataForge?</b></summary>
-<br>
-Simplemente descarga el nuevo AppImage y reemplaza el anterior. Tus datos se mantienen en <code>~/.local/share/DataForge/</code>.
-</details>
+Los contenedores Docker crean volúmenes persistentes gestionados por Docker. Los metadatos de DataForge se guardan en `~/.local/share/DataForge/`.
 
-<details>
-<summary><b>¿Funciona en otras distribuciones de Linux?</b></summary>
-<br>
+**¿Cómo actualizo DataForge?**
+
+Simplemente descarga el nuevo AppImage y reemplaza el anterior. Tus datos se mantienen en `~/.local/share/DataForge/`.
+
+**¿Funciona en otras distribuciones de Linux?**
+
 Sí, el AppImage es compatible con la mayoría de distribuciones Linux modernas (Ubuntu, Fedora, Arch, Debian, etc.).
-</details>
 
 ---
 
-<div align="center">
-
-### 🔥 Forja tus bases de datos con DataForge 🔥
+## 🔥 Forja tus bases de datos con DataForge 🔥
 
 **Si este proyecto te resulta útil, considera darle una ⭐**
 
 ---
 
 *Hecho con 🧡 y ☕ por Jorge Francisco Acosta Alcalá*
-
-</div>
