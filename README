@@ -8,7 +8,7 @@
 [![Flutter](https://img.shields.io/badge/Flutter-Linux-blue.svg)](https://flutter.dev)
 [![Docker](https://img.shields.io/badge/Docker-Ready-blue.svg)](https://www.docker.com/)
 
-![DataForge Logo](assets/logo.png)
+![DataForge Logo](packaging/dataforge.png)
 
 **Un administrador de bases de datos local poderoso, seguro y fácil de usar**
 
@@ -58,7 +58,7 @@ DataForge se distribuye como un **AppImage** autocontenido. No requiere instalac
 
 #### 1️⃣ **Descargar el AppImage**
 
-Descarga la última versión desde [Releases](https://github.com/tu-usuario/dataforge/releases):
+Descarga la última versión desde [Releases](https://github.com/JorgeFaa/dataforge/releases):
 
 ```
 DataForge-x86_64.AppImage
@@ -388,13 +388,16 @@ flutter run -d linux
 ## 📸 Capturas de Pantalla
 
 ### Panel Principal
-![Panel Principal](assets/screenshots/dashboard.png)
+![Panel Principal](docs/screenshots/dashboard.png)
 
-### Gestión de Contenedores
-![Contenedores](assets/screenshots/containers.png)
+### Creacion de tablas
+![Tables](docs/screenshots/Table_Creation.png)
 
-### Configuración
-![Configuración](assets/screenshots/settings.png)
+### Funcion Query
+![Query](docs/screenshots/Query_Function.png)
+
+### Admistración de usuarios
+![Usuarios](docs/screenshots/User_Administration.png)
 
 ---
 
